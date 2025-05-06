@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  padding: 4.8rem 2.4rem;
+}
+
+.heading-secondary {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  margin-bottom: 6.4rem;
+}
+
+/**************************************/
+/*patient SECTION*/
+/**************************************/
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2.4rem;
+  background-color: #f9f9f9;
+}
+
+.cta-form {
+  font-size: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+}
+
+input,
+select,
+textarea {
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tel {
+  margin-bottom: 4.8rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 8rem;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* 高さの調整だけをユーザーができる */
+}
+
+/**************************************/
+/*diagnosis SECTION*/
+/**************************************/
+
+.diagnosis-section {
+  font-size: 1.8rem;
+  padding: 4.8rem 0;
+  border-top: 2px solid #ddd;
+}
+
+.diagnosis-section div {
+  margin-bottom: 2.4rem;
+}
+
+#date {
+  margin-bottom: 2.4rem;
+}
+
+/**************************************/
+/*btn*/
+/**************************************/
+
+.btn {
+  display: inline-block; /*インライン要素にpaddingを効かせるためにインラインブロックを宣言*/
+  font-weight: 600;
+
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0.9rem 1.8rem; /*上下の値の2倍、左右の値を大きくすると綺麗に仕上がる*/
+  border-radius: 9px;
+
+  transition: all 0.3s; /*2つ以上の値の間をアニメーションで遷移させるプロパティ。
+  　　　　　　　　　　　　　　　　　　　アニメーションさせたいプロパティを指定し、どのくらいの時間効かせるかを指示する*/
+
+  /*Only necessary for .btn */
+  cursor: pointer;
+}
+.button-container {
+  text-align: center;
+}
+
+.btn:link,
+.btn:visited {
+  background-color: #007bff; /* 青系 */
+  color: #fff; /* 白文字 */
+  border: none; /* ボーダー無しですっきり */
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #0056b3; /* 濃い青でホバー感 */
+  transform: translateY(-2px); /* 少し浮くような感覚 */
+}
