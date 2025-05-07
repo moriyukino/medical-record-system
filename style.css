@@ -25,6 +25,56 @@ body {
 }
 
 /**************************************/
+/*icon section*/
+/**************************************/
+
+.icon-text {
+  z-index: 1000; /* 他の要素より前面に出す */
+
+  /* 1) 視覚的に隠す*/
+  opacity: 0;
+
+  /* 2) マウスとキーボードからアクセスできないようにする*/
+  pointer-events: none;
+
+  /* 3) スクリーンリーダを非表示にする*/
+  visibility: hidden;
+}
+/*nav-open新しいクラスを作成する。アコーディオンの講座でもそのように行ったことがある。
+JavaScriptを使って、追加・削除されるクラス。ナビゲーションが開いている時はいつでもヘッダー要素に(今回は、HTML上のheaderに新クラスを追加した）
+nav-openが表示される。このようなコンポーネントを作る時はよく使われる手法。*/
+
+.birth {
+  margin-bottom: 4.8rem;
+}
+
+.nav-open .icon-text {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translatex(0);
+}
+
+.nav-open .close-modal[name="close-outline"] {
+  display: block;
+}
+
+.nav-open .open-modal[name="open-outline"] {
+  display: none;
+}
+
+.address-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr; /* 3列に分ける */
+  gap: 2.4rem; /* 各項目の間に隙間を設定 */
+}
+
+.address-area div {
+  display: flex;
+  flex-direction: column; /* ラベルと入力フォームを縦に並べる */
+}
+
+/**************************************/
 /*patient SECTION*/
 /**************************************/
 
@@ -36,10 +86,24 @@ body {
 }
 
 .cta-form {
-  font-size: 1.6rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 1段目の3列 */
   gap: 2.4rem;
+}
+
+.cta-form > div {
+  display: flex;
+  flex-direction: column; /* 各項目のラベルと入力を縦並びに */
+}
+
+.birth {
+  grid-column: span 1; /* 生年月日を2列に渡るように設定 */
+}
+
+.peson {
+  width: 6.4rem;
+  height: 6.4rem;
+  margin-left: 4.8rem;
 }
 
 input,
@@ -50,10 +114,6 @@ textarea {
   font-family: inherit;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-.tel {
-  margin-bottom: 4.8rem;
 }
 
 textarea {
@@ -83,6 +143,27 @@ textarea {
 
 #date {
   margin-bottom: 2.4rem;
+}
+
+.alert-info {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 25rem;
+  background-color: #ffefef;
+  color: #b30000;
+  padding: 1.6rem;
+  border: 1px solid #ffaaaa;
+  border-radius: 8px;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
+  z-index: 1000;
+}
+
+.close-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /**************************************/

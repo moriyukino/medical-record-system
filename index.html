@@ -15,17 +15,40 @@
           
             <h2 class="heading-secondary">患者情報の入力</h2>
 
-            <div class="patient">
-
-              
+            <div class="patient">              
               
               <form class="cta-form" action="#">
+
+                <div class="open-modal" name="open-outline">
+
+                  <svg class="peson" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+                                    
+                </div>
+                <div class="alert-info">
+                  <h3>禁忌情報</h3>
+                  <p id="contra-info">〇〇禁止！</p>
+                </div>
                 
                 
                 <div>
                   <label for="full-name">患者氏名</label>
                   <input id="full-name" name="full-name" type="text" placeholder="山田太郎" required>
                 </div>
+
+                <div>
+                
+                  <label for="gender">性別</label>
+                  <select id="gender" name="gender" required>
+                    
+                    <option value=""></option>
+                    <option value="male">男性</option>
+                    <option value="female">女性</option>
+                    <option value="other">その他</option>
+                  </select>
+                  </div>
+  
                 
                 <div>
                   <label for="status">ステータス</label>
@@ -34,54 +57,58 @@
                     <option value="admitted">入院中</option>
                     <option value="putpatient">外来</option>
                     <option value="discharged">退院</option>
-                    
                   </select>
                 </div>
                 
-                <div>
+                <div class="birth">
                   <label for="birth">生年月日</label>
                 <input type="date" placeholder="年/月/日" id="birth" name="birth" required>
                 
               </div>
 
-              <div>
-                
-                <label for="gender">性別</label>
-                <select id="gender" name="gender" required>
+                </form>
+             
+                <form  class="icon-text">
+                  <div class="address-area">
+                    <div>
+                      <label for="zip">郵便番号</label>
+                      <input id="zip" name="zip" />
+                    </div>
+                    <div>
+                      <label for="phone">電話番号</label>
+                      <input id="phone" name="phone" />
+                    </div>
+                    <div>
+                      <label for="address">住所</label>
+                      <input id="address" name="address" />
+                    </div>
+                  </div>
                   
-                  <option value=""></option>
-                  <option value="male">男性</option>
-                  <option value="female">女性</option>
-                  <option value="other">その他</option>
-
-                </select>
-              </div>
-              
+                  
               <div>
+                <label for="">既往歴</label>
+                <textarea name="" id=""></textarea>
+                <label for="">現病歴</label>
+                <textarea name="" id=""></textarea>
+                <label for="">禁忌情報</label>
+                <textarea name="" id=""></textarea>
+
+                <div class="close-modal">
+                  <button type="button" id="close-modal" class="close-modal" name="close-outline" onclick="window.location.href='index.html'">閉じる</button>
+
+                </div>
                 
-                <span class="p-country-name" style="display:none;">Japan</span>
+          
                 
-                <label for="post-code">郵便番号：</label>
-                <input type="text" id="post-code" class="p-postal-code" required>
-                
-                <label for="adderess">住所：</label>
-                <input type="text" id="address" class="p-region p-locality p-street-address p-extended-address" required>
-                
-              </div>
+              </div>            
               
+            
+            </form>
               
-              <div class="tel">
-                <label for="tel">電話番号</label>
-                <!---required=入力必須-->
-                <input type="tel" id="tel" name="tel" placeholder="000-0000-0000" required>
-                
-              </div>
-
-          </div>
-
-              <div class="diagnosis-section">
-
-                <div class="text-area">
+            
+            <div class="diagnosis-section">
+              
+              <div class="text-area">
                 <label for="date">診療日</label>
                 <input type="date" id="date" name="date">
                 </div>
@@ -123,6 +150,27 @@
 
     </section>
 
+  
+    <script>
+      // アイコンをクリックしたらフォームを表示
+      document.querySelector('.open-modal').addEventListener('click', function () {
+        document.body.classList.add('nav-open');
+      });
+    
+      // 閉じるボタンを押したらフォームを非表示
+      document.querySelector('#close-modal').addEventListener('click', function () {
+        document.body.classList.remove('nav-open');
+      });
+
+      document.querySelector('#close-modal').addEventListener('click', function () {
+  document.body.classList.remove('nav-open');
+  // ホームへの遷移（例: ページをリロードする、トップへスクロールするなど）
+  window.location.href = '#'; // または location.reload(); でリロード
+});
+
+    
+    </script>
+    
 
   </body>
 </html>
